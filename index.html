@@ -18,8 +18,8 @@
 	<meta property="og:image" content="http://scn9a.org/whatcolourisit/1.jpg" />
 
 	<style>
-		body { transition: all 1.6s; -webkit-transition: all 1.6s; }
-		h1, h2 { font-family: "open sans", verdana, arial, sans-serif; font-size: 40px; font-weight: 300; color: #fff; }
+		body, h1, h2 { transition: all 1.6s; -webkit-transition: all 1.6s; }
+		h1, h2 { font-family: 'open sans', verdana, arial, sans-serif; font-size: 40px; font-weight: 300; color: #fff; }
 		h2 { font-size: 20px; }
 		h1 span { vertical-align: 0.07em; }
 
@@ -50,21 +50,26 @@
 </body>
 
 <script type="text/javascript">
+	var t = document.getElementById('t'),
+		h = document.getElementById('h');
+		
 	function dotime() {
 		
 		var d 		= new Date();
 			hours 	= d.getHours(),
 			mins 	= d.getMinutes(),
-			secs 	= d.getSeconds();
+			secs 	= d.getSeconds(),
+			
+			hex = toHex(hours, 24) + toHex(mins, 60) + toHex(secs, 60),
+			color = (parseInt(hex, 16) > 0xffffff / 2) ? 'black' : 'white';
 		
-		var hex = "#" + toHex(hours, 24) + toHex(mins, 60) + toHex(secs, 60);
+		t.innerHTML = padLeft(hours) + '<span>:</span>' + padLeft(mins) + '<span>:</span>' + padLeft(secs);
+		h.innerHTML = '#' + hex;
+		t.style.color = h.style.color = color;
 		
-		document.getElementById('t').innerHTML = padLeft(hours) +" <span>:</span> "+ padLeft(mins) +" <span>:</span> "+ padLeft(secs);
-		document.getElementById('h').innerHTML = hex;
+		document.body.style.background = '#' + hex;
 		
-		document.body.style.background = hex;
-		
-		setTimeout(function(){ dotime();}, 1000);
+		setTimeout(function(){ dotime(); }, 1000);
 	}
 
 	function toHex(time, div) {
