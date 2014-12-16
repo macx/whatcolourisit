@@ -63,7 +63,7 @@
 			hex = toHex(hours, 24) + toHex(mins, 60) + toHex(secs, 60),
 			color = (parseInt(hex, 16) > 0xffffff / 2) ? 'black' : 'white';
 		
-		t.innerHTML = padLeft(hours) + '<span>:</span>' + padLeft(mins) + '<span>:</span>' + padLeft(secs);
+		t.innerHTML = padLeft(hours) + '<span> : </span>' + padLeft(mins) + '<span> : </span>' + padLeft(secs);
 		h.innerHTML = '#' + hex;
 		t.style.color = h.style.color = color;
 		
