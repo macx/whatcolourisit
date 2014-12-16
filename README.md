@@ -7,4 +7,4 @@ Website: http://igoradamenko.com/whatcolourisit
 
 Original idea and website by J.E.Murphy: http://jemurphy.org/
 
-Fixed by Igor Adamenko: http://igoradamenko.com
+Supplemented by Igor Adamenko: http://igoradamenko.com
