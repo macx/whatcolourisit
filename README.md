@@ -1,4 +1,9 @@
-whatcolourisit
+What Colour Is It?
 ==============
 
-It's http://whatcolourisit.scn9a.org/ but without jQuery and with full range of colours
+Website: http://igoradamenko.com/whatcolourisit
+
+## Who's this by?
+
+Original idea and website by J.E.Murphy: http://jemurphy.org/
+Fixed by Igor Adamenko: http://igoradamenko.com
